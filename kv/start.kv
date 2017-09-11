@@ -1,0 +1,33 @@
+
+
+RootWidget:
+    # import container
+    container: container
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 0
+        spacing: 6
+
+        # bottom-left part:
+        BoxLayout:
+            id: container
+            orientation: 'horizontal'
+            padding: 0
+            spacing: 6
+
+            # bottom-left
+            FloatLayout:
+                size_hint: 0.12, 0.12
+                padding: 0
+                spacing: 6
+
+                # option calibrate
+                Button:
+                    pos_hint:{"center_x": .5, "center_y": .5}
+                    text: 'Start'
+                    on_release: app.start()
+
+            # create container (bottom-right)
+            #BoxLayout:
+                #id: container

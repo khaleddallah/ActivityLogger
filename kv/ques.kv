@@ -1,0 +1,98 @@
+#:import datetime datetime
+
+RootWidget:
+		fld:fld
+		que:que
+		num:num
+		container:container
+		orientation: "vertical"
+		padding: 20 , 20
+		#main
+		BoxLayout:
+				id: container
+				orientation: "vertical"
+				spacing: 10
+				#submain
+				BoxLayout:
+						orientation: "vertical"
+						#size_hint_y: None
+						#height: 190
+						spacing: 10
+						#part
+						BoxLayout:
+								orientation:"vertical"
+								#size_hint_y: None
+								#height: 30
+								size_hint_x:None
+								width: 750
+								Label:
+										text:''
+								Label:
+										id: num
+										#valign: 'bottom'
+										halign: 'center'
+										bold: True
+										font_name: '../fonts/COPRGTL.TTF'
+										font_size: '20sp'
+										text: "1"
+
+								Label:
+										id: fld
+										#valign: 'top'
+										halign: 'center'
+										font_name: '../fonts/COPRGTL.TTF'
+										font_size: '15sp'
+										text: root.initfld
+								BoxLayout:
+										size_hint_x:None
+										size_hint_y: None
+										width: 750
+										height: 100										
+										Label:
+												size_hint_x:None
+												size_hint_y: None
+												width: 750
+												height: 100
+												id: que
+												#valign: 'top'
+												halign: 'center'
+												font_size: '25sp'
+												font_name: 'COPRGTL.TTF'
+												multiline: True
+												text: root.list_ques[0]
+
+				#submain
+				BoxLayout:
+						size_hint_y: None
+						height: 30
+						orientation: "horizontal"
+						size_hint_x: None
+						width: 760
+						TextInput:
+								text: ""
+								multiline: False
+
+
+				#submain
+				BoxLayout:
+						size_hint_y: None
+						height: 40
+						FloatLayout:
+								size_hint_x: None
+								width: 760
+								#part
+								BoxLayout:
+										size_hint_x: None
+										width: 70
+										pos_hint: {"right": 1, "y": 0}
+										Button:
+												text: "next"
+												on_release:root.nextf()
+								#part
+								BoxLayout:
+										size_hint_x: None
+										width: 70
+										pos_hint: {"x": 0, "y": 0}
+										Button:
+												text: "back"
+												on_release:root.backf()
